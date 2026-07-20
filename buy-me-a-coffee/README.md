@@ -1,5 +1,6 @@
-如果您觉得这个项目有帮助你，可以考虑给dw-dengwei打赏
+# Buy me a coffee
 
-注意：如果您希望打赏其它Fork仓库而不是[dw-dengwei/daily-arXiv-ai-enhanced](https://github.com/dw-dengwei/daily-arXiv-ai-enhanced/tree/main) 请不要扫码
+This is a fork of [dw-dengwei/daily-arXiv-ai-enhanced](https://github.com/dw-dengwei/daily-arXiv-ai-enhanced).
 
-![code](./code.jpg)
+If you found the original project helpful, please star / support the upstream repo.
+This fork (`xiaoqianran/actions-arxiv002-daily-arXiv-ai-enhanced`) does not collect tips.

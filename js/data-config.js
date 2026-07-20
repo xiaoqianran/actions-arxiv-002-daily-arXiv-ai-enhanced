@@ -12,13 +12,13 @@ const DATA_CONFIG = {
      * GitHub repository owner (username)
      * This will be replaced during GitHub Actions workflow execution
      */
-    repoOwner: 'dw-dengwei',
+    repoOwner: 'xiaoqianran',
 
     /**
      * GitHub repository name
      * This will be replaced during GitHub Actions workflow execution
      */
-    repoName: 'daily-arXiv-ai-enhanced',
+    repoName: 'actions-arxiv002-daily-arXiv-ai-enhanced',
 
     /**
      * Data branch name
