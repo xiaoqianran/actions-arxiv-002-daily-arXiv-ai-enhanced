@@ -169,10 +169,12 @@ def process_all_items(data: List[Dict], model_name: str, language: str, max_work
     """并行处理所有数据项"""
     # DeepSeek-specific: disable thinking mode. Other OpenAI-compatible
     # providers (e.g. NVIDIA NIM) may reject unknown extra_body keys.
+    # gpt-oss 等推理模型会把 reasoning token 计入 max_tokens，需留足余量
+    max_tokens = 4096 if any(k in model_name.lower() for k in ("gpt-oss", "o1", "o3", "reasoning")) else 2048
     chat_kwargs = {
         "model": model_name,
         "temperature": 0,
-        "max_tokens": 2048,
+        "max_tokens": max_tokens,
     }
     if "deepseek" in model_name.lower():
         chat_kwargs["extra_body"] = {"thinking": {"type": "disabled"}}
@@ -226,7 +228,7 @@ def process_all_items(data: List[Dict], model_name: str, language: str, max_work
 
 def main():
     args = parse_args()
-    model_name = os.environ.get("MODEL_NAME", 'deepseek-chat')
+    model_name = os.environ.get("MODEL_NAME", 'openai/gpt-oss-120b')
     language = os.environ.get("LANGUAGE", 'Chinese')
 
     # 检查并删除目标文件
